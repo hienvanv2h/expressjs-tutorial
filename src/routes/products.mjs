@@ -4,8 +4,6 @@ import { products } from "../utils/test-data.mjs";
 const productRouter = Router();
 
 productRouter.get("/api/products", (req, res) => {
-  console.log(req.headers.cookie);
-  console.log(req.signedCookies);
   if (
     req.signedCookies.cookieName &&
     req.signedCookies.cookieName === "HelloWorld"

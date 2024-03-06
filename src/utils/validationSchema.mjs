@@ -6,6 +6,9 @@ export const userValidationSchema = {
     isString: {
       errorMessage: "Username must be of type string",
     },
+    isEmail: {
+      errorMessage: "Invalid username",
+    },
     isLength: {
       options: { min: 8, max: 32 },
       errorMessage: "Must be at least 5 and max of 32 characters",
@@ -14,6 +17,11 @@ export const userValidationSchema = {
   displayName: {
     notEmpty: {
       errorMessage: "Display name must not be empty",
+    },
+  },
+  password: {
+    notEmpty: {
+      errorMessage: "Password must not be empty",
     },
   },
 };
