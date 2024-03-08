@@ -1,12 +1,14 @@
 import { Router } from "express";
 import passport from "passport";
-// import "../strategies/local-strategy.mjs";
+import "../strategies/local-strategy.mjs";
 import "../strategies/discord-strategy.mjs";
 
 const authRouter = Router();
 
 authRouter.post("/api/auth", passport.authenticate("local"), (req, res) => {
-  return res.send({ success: true, message: "Authentication succeeded" });
+  return res
+    .status(200)
+    .send({ success: true, message: "Authentication succeeded" });
 });
 
 authRouter.get("/api/auth/status", (req, res) => {
